@@ -45,6 +45,7 @@ text-align: center;
 color: white;
 height: 80px;
 `
+
 const rotateAnimation = keyframes`
   from {
     transform: rotate(0deg);
