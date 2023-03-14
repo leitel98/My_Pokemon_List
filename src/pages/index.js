@@ -10,7 +10,7 @@ const Pokemon = ({ pokemon, im }) => {
 
   return ( //defino la ruta abajo, ojo nombre carpeta
     <ListItem>
-      <Image alt='none' src = {im} width = {80} height = {80}/>
+      <Image style={{paddingRight: '30px'}} alt='none' src = {im} width = {80} height = {80}/>
       <Link href={`/pokemons/${id}`}>{pokemon.name}</Link>
     </ListItem>
   )
