@@ -24,6 +24,7 @@ align-items: center;
 justify-content: left;
 background-color: #fff;
 width: 300px;
+height: 50px;
 margin: 0 auto;
 padding: 20px;
 border-radius: 5px;
