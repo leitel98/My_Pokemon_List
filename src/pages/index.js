@@ -42,7 +42,7 @@ export default function Pokemons({ pokemones }) {
       <Container>
         <Content>
           <Center>
-            {ims.map((im, index) => <Pokemon index={pokemones[index].url.split('/').filter(x=>x).pop()-1} im={im} pokemon={pokemones[index]} key={pokemones[index].name} />)}
+            {ims.map((im, index) => <Pokemon im={im} pokemon={pokemones[index]} key={pokemones[index].name} />)}
           </Center>
         </Content>
       </Container>      
