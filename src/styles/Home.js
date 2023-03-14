@@ -34,6 +34,7 @@ background-color: royalblue;
 display: flex;
 align-items: center;
 justify-content: center;
+border-radius: 4px;
 `
 
 export const Title = styled.h1`
