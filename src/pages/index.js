@@ -11,7 +11,7 @@ export default function Pokemons({ pokemones }) { //en el getstaticprops
   return (
     <>
       <div>
-        <p>Pokemon</p>
+        <p>My Pokemon List</p>
         <ul>
           {pokemones.map(pokemon => <Pokemon pokemon={pokemon} key={pokemon.name} />)}
         </ul>
