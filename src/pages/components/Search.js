@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SearchBar } from '../../styles/Home';
 
-const SmartSearchBar = ({ data, handleSearch }) => {
+const SmartSearchBar = ({ handleSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleInputChange = (e) => {
@@ -14,7 +14,7 @@ const SmartSearchBar = ({ data, handleSearch }) => {
     <div>
       <SearchBar
         type="text"
-        placeholder={`Search ${ data.map((item) => item.name).join(', ')}`}
+        placeholder={`Search pokemons`}
         value={searchTerm}
         onChange={handleInputChange}
       />
