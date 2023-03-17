@@ -29,14 +29,15 @@ export const Content = styled.div`
   padding: 10px;
   `
 
-  export const Navbar = styled.div`
-    background-color: royalblue;
-    grid-area: nav;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-radius: 4px;
-  `
+export const Navbar = styled.div`
+  background-color: royalblue;
+  grid-area: nav;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  padding: 0 20px;
+  border-radius: 4px;
+`
 
 export const SelectWrapper = styled.div`
   display: flex;
@@ -69,11 +70,20 @@ export const ListItem = styled.div`
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 `
 
+export const SearchBar = styled.input`
+border: 1px solid #ccc;
+border-radius: 4px;
+font-size: 16px;
+padding: 10px;
+width: 300px;
+`;
+
 export const Title = styled.h1`
   display:flex;
   align-items: center;
   margin: 0;
   margin-right:10px;
+  margin-left:10px;
   text-align: center;
   color: white;
   height: 80px;
@@ -91,7 +101,6 @@ const rotateAnimation = keyframes`
 export const Logo = styled.div`
   width: 40px;
   height: 40px;
-  margin-right: 10px;
   background-image: url('/pokeball.png');
   background-size: cover;
   animation: ${rotateAnimation} 2s linear infinite;
