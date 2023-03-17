@@ -72,7 +72,7 @@ export default function Pokemons({ pokemones }) {
       <Navbar>
         <Logo />
         <Title data-testid='titulo'>My Pokemon List</Title>
-        <SmartSearchBar data={pkmn} setFilteredPkmn={setFilteredPkmn} setFilteredIms={setFilteredIms} handleSearch={handleSearch} />
+        <SmartSearchBar data={pkmn} handleSearch={handleSearch} />
           <Selector setFilter={setFilter} />
         <SelectWrapper>
         </SelectWrapper>
