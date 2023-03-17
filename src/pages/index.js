@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Title, Navbar, ListItem, Center, Container, Content, Logo} from '../styles/Home'
+import { Title, Navbar, SelectWrapper, ListItem, Container, Content, Logo} from '../styles/Home'
+import Selector from '../pages/components/Selector'
+import Aside from '../pages/components/Aside'
 import { useState, useEffect } from 'react'
 
 export const Pokemon = ({ pokemon, im }) => {
@@ -47,37 +49,19 @@ export default function Pokemons({ pokemones }) {
     fetchData();
   }, [filter, pokemones]);
   return (
-    <><Navbar>
-        <Title data-testid='titulo'>My Pokemon List</Title>
+    <Container>
+      <Navbar>
         <Logo />
-        <select onChange={(e) => setFilter(e.target.value)}>
-          <option value="all">All</option>
-          <option value="bug">Bug</option>
-          <option value="dragon">Dragon</option>
-          <option value="electric">Electric</option>
-          <option value="fairy">Fairy</option>
-          <option value="fighting">Fighting</option>
-          <option value="fire">Fire</option>
-          <option value="ghost">Ghost</option>
-          <option value="grass">Grass</option>
-          <option value="ground">Ground</option>
-          <option value="ice">Ice</option>
-          <option value="normal">Normal</option>
-          <option value="poison">Poison</option>
-          <option value="psychic">Psychic</option>
-          <option value="rock">Rock</option>
-          <option value="steel">Steel</option>
-          <option value="water">Water</option>
-        </select>
+        <Title data-testid='titulo'>My Pokemon List</Title>
+        <SelectWrapper>
+        <Selector setFilter={setFilter} />
+        </SelectWrapper>
       </Navbar>
-      <Container>
+      <Aside />
         <Content>
-          <Center>
             {ims.map((im, index) => <Pokemon im={im} pokemon={pkmn[index]} key={pkmn[index].name} />)}
-          </Center>
         </Content>
-      </Container>      
-    </>
+    </Container>      
   )
 }
 
