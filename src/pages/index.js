@@ -59,10 +59,11 @@ export default function Pokemons({ pokemones }) {
     setFilteredPkmn(filteredPkmn);
 
     const filteredIms = filteredPkmn.map((pk) => {
-      const index = pkmn.findIndex((item) => item.name === pk.name);
+      const index = pkmn.findIndex((item) => 
+      item.name === pk.name);
       return index !== -1 ? ims[index] : null;
-    }).filter((url) => url !== null);
-
+    })
+    .filter((url) => url !== null);
     setFilteredIms(filteredIms);
   };
 
