@@ -42,7 +42,7 @@ export const Navbar = styled.div`
 export const SelectWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   flex: 1;
 `;
 

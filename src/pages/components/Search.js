@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SearchBar } from '../../styles/Home';
 
-const SmartSearchBar = ({ handleSearch }) => {
+const SmartSearchBar = ({handleSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleInputChange = (e) => {
