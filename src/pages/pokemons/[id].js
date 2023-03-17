@@ -3,8 +3,6 @@ import Link from 'next/link'
 import {useRouter} from 'next/router'
 
 const Pokemon = ({data}) => {
-  console.log(data)
-  console.log(data.types[0].type.name)
 
   return (
     <div>
