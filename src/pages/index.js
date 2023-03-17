@@ -4,7 +4,7 @@ import { Title, Navbar, SelectWrapper, ListItem, Container, Content, Logo} from 
 import Selector from '../pages/components/Selector'
 import Aside from '../pages/components/Aside'
 import SmartSearchBar from '../pages/components/Search'
-import { useState, useEffect, createContext, useContext } from 'react'
+import { useState, useEffect } from 'react'
 
 export const Pokemon = ({ pokemon, im }) => {
   if (!pokemon) {
@@ -72,7 +72,7 @@ export default function Pokemons({ pokemones }) {
       <Navbar>
         <Logo />
         <Title data-testid='titulo'>My Pokemon List</Title>
-        <SmartSearchBar handleSearch={handleSearch} />
+        <SmartSearchBar data={pkmn} handleSearch={handleSearch} />
           <Selector setFilter={setFilter} />
         <SelectWrapper>
         </SelectWrapper>
