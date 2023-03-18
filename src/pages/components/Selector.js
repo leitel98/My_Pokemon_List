@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import React from 'react'
 
 export const Select = styled.select`
+  width: 50px;
   font-size: 16px;
   padding: 5px;
   border: none;
@@ -9,6 +10,10 @@ export const Select = styled.select`
   background-color: white;
   color: black;
   margin-left: 10px;
+  transition: width 0.3s ease-in-out;
+  &:focus {
+    width: 70px;
+  }
 `;
 
 const Selector = ({setFilter}) => {

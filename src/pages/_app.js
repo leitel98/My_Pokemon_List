@@ -1,5 +1,21 @@
-// import '<leitel>/styles/globals.css'
+import { createGlobalStyle } from 'styled-components';
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+const GlobalStyle = createGlobalStyle`
+  body {
+    scroll-behavior: smooth;
+    background-color: #636363;
+    padding: none;
+  }
+`;
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <GlobalStyle />
+      <Component {...pageProps} />
+    </>
+  );
 }
+
+export default MyApp;
+

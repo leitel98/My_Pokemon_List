@@ -40,7 +40,7 @@ export default function Pokemons({ pokemones }) {
       <Aside />
       <Content>
         {filteredPkmn.map((pk) => (
-          <Pokemon im={pk.sprites.front_default} pokemon={pk} key={pk.name} />
+          <Pokemon pokemon={pk} key={pk.name} />
         ))}
       </Content>
     </Container>
