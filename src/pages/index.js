@@ -4,7 +4,7 @@ import Selector from '../pages/components/Selector'
 import Aside from '../pages/components/Aside'
 import SmartSearchBar from '../pages/components/Search'
 import Pokemon from '../pages/components/Pokemon'
-
+//a
 export default function Pokemons({ pokemones }) {
   const [filter, setFilter] = useState('all')
   const [pkmn, setPkmn] = useState([])
