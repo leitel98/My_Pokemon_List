@@ -1,5 +1,6 @@
 import styled, {keyframes} from 'styled-components'
-// import logo from '../../public/pokeball.png'
+import Image from 'next/image';
+import Link from 'next/link'
 
 export const Container = styled.div`
   width: 100%;
@@ -123,3 +124,39 @@ export const Logo = styled.div`
   background-size: cover;
   animation: ${rotateAnimation} 2s linear infinite;
 `;
+
+export const ScreenIcon = styled(Image)`
+  margin-right: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background: linear-gradient(to bottom right, #85c1e9, white, #85c1e9);
+  border: 1px solid #000005;
+  border-radius: 8px;
+`;
+
+export const PokeLink = styled(Link)`
+  text-decoration: none;
+  color: #333333;
+  background-color: #fdd835;
+  border-radius: 6px;
+  border: 1px solid black;
+  height: 40px;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & > span:first-child {
+    /* styles for the first child span element */
+  }
+
+  & > span:last-child {
+    /* styles for the last child span element */
+    background-color: white;
+    border-radius: 8px;
+    color: #636363;
+    padding: 4px;
+  }
+`
