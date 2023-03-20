@@ -4,6 +4,8 @@ const nextConfig = {
   images: {
     domains: ['raw.githubusercontent.com'],
     unoptimized: true,
+    basePath: '/My_Pokemon_List',
+    assetPrefix: '/My_Pokemon_List/',
   }
 }
 
