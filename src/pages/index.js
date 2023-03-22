@@ -1,14 +1,18 @@
 import { useState, useEffect } from 'react'
-import { Container, Content, Navbar, Logo, Title, SelectWrapper } from '../styles/Home'
+import { Container, Content, Navbar, Aside, Logo, Title, SelectWrapper, ToggleButton } from '../styles/Home'
 import Selector from '../pages/components/Selector'
-import Aside from '../pages/components/Aside'
 import SmartSearchBar from '../pages/components/Search'
 import Pokemon from '../pages/components/Pokemon'
-//a
+
 export default function Pokemons({ pokemones }) {
   const [filter, setFilter] = useState('all')
   const [pkmn, setPkmn] = useState([])
   const [filteredPkmn, setFilteredPkmn] = useState([])
+  const [asideWidth, setAsideWidth] = useState(60);
+
+  const toggleAsideWidth = () => {
+    setAsideWidth(asideWidth === 230 ? 60 : 230);
+  };
 
   useEffect(() => {
     const filteredPkmnData = pokemones.filter(pokemon => {
@@ -28,7 +32,7 @@ export default function Pokemons({ pokemones }) {
   }
 
   return (
-    <Container>
+    <Container asideWidth={asideWidth}>
       <Navbar>
         <Logo />
         <Title data-testid='titulo'>My Pokemon List</Title>
@@ -37,7 +41,11 @@ export default function Pokemons({ pokemones }) {
           <Selector setFilter={setFilter} />
         </SelectWrapper>
       </Navbar>
-      <Aside />
+      <Aside>
+        <ToggleButton onClick={toggleAsideWidth}>
+          Menu
+        </ToggleButton>
+      </Aside>
       <Content>
         {filteredPkmn.map((pk) => (
           <Pokemon pokemon={pk} key={pk.name} />
