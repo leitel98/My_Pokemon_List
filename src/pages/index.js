@@ -9,11 +9,11 @@ export default function Pokemons({ pokemones }) {
   const [pkmn, setPkmn] = useState([])
   const [filteredPkmn, setFilteredPkmn] = useState([])
   const [asideWidth, setAsideWidth] = useState(60);
-
+//Change the width of the aside component
   const toggleAsideWidth = () => {
     setAsideWidth(asideWidth === 230 ? 60 : 230);
   };
-
+//Aply the filter to the pokemon list
   useEffect(() => {
     const filteredPkmnData = pokemones.filter(pokemon => {
       if (filter === 'all' || pokemon.types.some(type => type.type.name === filter)) {
@@ -25,7 +25,7 @@ export default function Pokemons({ pokemones }) {
     setFilteredPkmn(filteredPkmnData)
     setPkmn(filteredPkmnData)
   }, [pokemones, filter])
-  
+  //Filters the pokemon list by the term on the search bar
   const handleSearch = (term) => {
     const filteredPkmn = pkmn.filter((item) => item.name.toLowerCase().includes(term.toLowerCase()))
     setFilteredPkmn(filteredPkmn)
@@ -54,7 +54,7 @@ export default function Pokemons({ pokemones }) {
     </Container>
   )
 }
-
+//fetch pokemons->to json->fetch every pkmn url->to json->return the pkmn+url
 export const getStaticProps = async () => {
   const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
   const data = await response.json()
