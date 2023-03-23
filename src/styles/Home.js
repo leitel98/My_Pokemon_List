@@ -26,6 +26,7 @@ export const Aside = styled.div`
   box-sizing: border-box;
   justify-content:center;
   background-color: lightgray;
+  z-index: 1;
   `;
 
 export const ToggleButton = styled.button`
@@ -52,7 +53,7 @@ export const Navbar = styled.div`
   padding: 0 20px;
   border-radius: 4px;
   margin: none;
-  z-index:1;
+  z-index:2;
 `
 
 export const Content = styled.div`
