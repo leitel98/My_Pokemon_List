@@ -52,6 +52,7 @@ export const Navbar = styled.div`
   padding: 0 20px;
   border-radius: 4px;
   margin: none;
+  z-index:1;
 `
 
 export const Content = styled.div`
