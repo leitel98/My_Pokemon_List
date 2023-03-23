@@ -1,6 +1,7 @@
 import styled, {keyframes} from 'styled-components'
 import Image from 'next/image';
 import Link from 'next/link'
+import colors from './colors'
 
 export const Container = styled.div`
   width: 100%;
@@ -14,35 +15,37 @@ export const Container = styled.div`
   grid-template-rows: 50px 1fr 30px;
   padding: none;
   margin: none;
+  scroll-behavior: smooth;
   `
 export const Aside = styled.div`
   grid-area: aside;
-  width: ${({ width }) => `${width}px`};
-  display: flex;
+  display: grid;
+  grid-template-areas:
+    "menu";
+  grid-template-rows: 40px 1fr;
+  box-sizing: border-box;
   justify-content:center;
   background-color: lightgray;
-  border-radius: 4px;
-  margin-top: 5px;
   `;
 
 export const ToggleButton = styled.button`
-background-color: lightblue;
-height: 25px;
-width: 100%;
-padding: 10px;
-margin: 5px;
-border-radius: 5px;
-border: 1px solid lightblue;
-font-size: 12px;
-display: flex;
-justify-content: center;
-align-items: center;
-cursor: pointer;
+  background-color: lightblue;
+  grid-area: menu;
+  width: ${({ asideWidth }) => `${asideWidth}px`};
+  position: fixed;
+  padding: 10px;
+  border: 1px solid lightblue;
+  font-size: 12px;
+  cursor: pointer;
 `;
 
 export const Navbar = styled.div`
-  background-color: #474747;
+  background-color: ${colors.black};
   grid-area: nav;
+  position: sticky;
+  width: 100%;
+  height: 50px;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content:space-between;
@@ -55,11 +58,9 @@ export const Content = styled.div`
   background: #aeb6bf;
   grid-area: content;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(335px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(335px, 1fr));
   grid-gap: 10px;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 4px;
+  padding: 5px;
 `;
 
 export const ListItem = styled.div`
@@ -68,7 +69,7 @@ export const ListItem = styled.div`
   flex: 1 1 50px;
   align-items: center;
   justify-content: left;
-  background-color: #229954;
+  background-color: ${colors.green};
   border-width: 4px 2px;
   border-style: solid;
   border-color: #ffffff;
@@ -156,7 +157,7 @@ export const ScreenIcon = styled(Image)`
 export const PokeLink = styled(Link)`
   text-decoration: none;
   color: #333333;
-  background-color: #fdd835;
+  background-color: ${colors.yellow};
   border-radius: 6px;
   border: 1px solid black;
   height: 40px;

@@ -42,7 +42,7 @@ export default function Pokemons({ pokemones }) {
         </SelectWrapper>
       </Navbar>
       <Aside>
-        <ToggleButton onClick={toggleAsideWidth}>
+        <ToggleButton asideWidth={asideWidth} onClick={toggleAsideWidth}>
           Menu
         </ToggleButton>
       </Aside>
