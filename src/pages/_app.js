@@ -4,7 +4,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     scroll-behavior: smooth;
     background-color: #636363;
-    padding: none;
+    padding: 0px;
+    margin: 0px;
   }
 `;
 
